@@ -1,0 +1,23 @@
+[
+ {
+    "index": 0,
+    "songname": "Latch",
+    "artist": "Sam Smith",
+    "song_url": "Sam Smith - Latch.mp3",
+    "albumartwork": "albumart.jpg"
+  },
+  {
+    "index": 1,
+    "songname": "Papoutai",
+    "artist": "Stromae",
+    "song_url": "Stromae - Papaoutai.mp3",
+    "albumartwork": "albumart.jpg"
+  },
+  {
+    "index": 2,
+    "songname": "Tous Les Mêmes",
+    "artist": "Stromae",
+    "song_url": "Stromae - Tous Les Mêmes.mp3",
+    "albumartwork": "albumart.jpg"
+  }
+]

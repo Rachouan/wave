@@ -1,0 +1,348 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+.hide{
+	display: none;
+}
+body{
+	background-color: #2A2A2A;
+	font-family: Asap;
+	overflow: hidden;
+
+}
+.blur{
+	-webkit-filter: blur(5px); 
+	-moz-filter: blur(5px); 
+	-o-filter: blur(5px); 
+	-ms-filter: blur(5px); 
+	filter: blur(5px);
+}
+article{
+	width: 100%;
+	float: left;
+}
+article section.musicPlayer{
+
+	float: left;
+	position: relative;
+	width: 200px;
+	height: 200px;
+	margin: 50px;
+	background-color: white;
+	border-radius: .5em;
+	overflow: hidden;
+
+
+	webkit-transition: all .1s ease-out;
+	-moz-transition: all .1s ease-out;
+	-ms-transition: all .1s ease-out;
+	-o-transition: all .1s ease-out;
+	transition: all .1s ease-out;
+
+}
+article section.musicPlayer.header{
+
+	width: 100%;
+	height: 75px;
+	border-radius: 0;
+	background: contain;
+	background-position: left;
+	margin: 0px;
+
+
+}
+
+article section.musicPlayer.dragging{
+	
+	
+
+	/*-webkit-box-shadow: 0 0 10px 5px rgba(0,0,0,.05);
+	box-shadow: 0 0 10px 5px rgba(0,0,0,.05);*/
+}
+
+article section.musicPlayer.header span.box{
+
+	float: left;
+	left: 100%;
+	margin-left: -75px;
+	position: absolute;
+	color: rgba(0,0,0,.7);
+	width: 75px;
+	padding: 0;
+	height: 75px;
+	line-height: 70px;
+	text-align: center;
+	cursor: pointer;
+	
+}
+
+
+article section.musicPlayer span.box{
+
+	float: left;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 9999;
+	font-size: 1em;
+	color: rgba(0,0,0,.7);
+	width: 90%;
+	padding:  10px 5%;
+	text-align: right;
+	cursor: pointer;
+	
+}
+article section.musicPlayer.header div.banner{
+	
+	background-size: contain;
+	background-position: left;
+	
+}
+
+
+
+
+article section.musicPlayer div.banner{
+	
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	background-image: url(../images/album.png);
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	
+	
+}
+
+article section.musicPlayer nav{
+	
+	width: 200px;
+	height: 200px;
+	line-height: 200px;
+	float: left;
+	text-align: center;
+	
+}
+article section.musicPlayer.header nav{
+	
+	margin-left: 80px;
+	height: 75px;
+	line-height: 75px;
+	
+}
+
+article section.musicPlayer nav ul li{
+
+	display: inline-block;
+	font-size: 1.3em;
+	margin:0 10px;
+	padding: 5px;
+	cursor: pointer;
+	opacity: .5;
+	color: black;
+	text-align: center;
+
+	webkit-transition: all .2s ease-out;
+	-moz-transition: all .2s ease-out;
+	-ms-transition: all .2s ease-out;
+	-o-transition: all .2s ease-out;
+	transition: all .2s ease-out;
+
+}
+article section.musicPlayer nav ul li:hover{
+	opacity: 1;
+}
+article section.musicPlayer nav ul li.icon-rewind:hover{
+	-moz-transform: translateX(-2px);
+	-webkit-transform: translateX(-2px);
+	-o-transform: translateX(-2px);
+	-ms-transform: translateX(-2px);
+	transform: translateX(-2px);
+}
+article section.musicPlayer nav ul li.icon-fast-forward:hover{
+	-moz-transform: translateX(2px);
+	-webkit-transform: translateX(2px);
+	-o-transform: translateX(2px);
+	-ms-transform: translateX(2px);
+	transform: translateX(2px);
+}
+
+article section.musicPlayer header div.scrubBar{
+
+	width: 100%;
+	position: absolute;
+	height: 5px;
+	margin-top: -5px;
+	left: 0;
+	background-color: rgba(0,0,0,.1);
+
+	webkit-transition: all .2s ease-out;
+	-moz-transition: all .2s ease-out;
+	-ms-transition: all .2s ease-out;
+	-o-transition: all .2s ease-out;
+	transition: all .2s ease-out;
+	
+}
+article section.musicPlayer header div.scrubBar:hover{
+
+	height: 8px;
+	margin-top: -8px;
+	
+}
+article section.musicPlayer header div.scrubBar span.playback{
+
+	display: block;
+	width: 0%;
+	float: left;
+	height: 100%;
+	background-color: rgba(0,0,0,.2);
+
+	webkit-transition: all .1s ease-out;
+	-moz-transition: all .1s ease-out;
+	-ms-transition: all .1s ease-out;
+	-o-transition: all .1s ease-out;
+	transition: all .1s ease-out;
+	
+}
+article section.musicPlayer div.banner img{
+
+	width: 100%;
+	display: none;
+	
+}
+
+
+article section.musicPlayer header{
+	position: absolute;
+	width: 80%;
+	padding: 0 10%;
+	height: 75px;
+	top: 100%;
+	left: 0;
+	margin-top: 0px;
+	background-color: rgba(255,255,255,.8);
+
+	webkit-transition: all .2s ease-out;
+	-moz-transition: all .2s ease-out;
+	-ms-transition: all .2s ease-out;
+	-o-transition: all .2s ease-out;
+	transition: all .2s ease-out;
+	
+}
+
+article section.musicPlayer.header header{
+	position: static;
+	float: left;
+	width: auto;
+	padding: 0;
+	height: 75px;
+	line-height: 75px;
+	top: 0;
+	left: 0;
+	margin-top: 0px;
+	background: none;
+	margin-left: 50px;
+	
+}
+article section.musicPlayer.header h1{
+	margin: 0 20px 0 0;
+}
+article section.musicPlayer.header h2{
+	margin: 0;
+}
+article section.musicPlayer.header header div.scrubBar{
+
+	width: 100%;
+	position: absolute;
+	height: 5px;
+	margin-top: 70px;
+	left: 0;
+	background-color: rgba(0,0,0,.1);
+
+	webkit-transition: all .2s ease-out;
+	-moz-transition: all .2s ease-out;
+	-ms-transition: all .2s ease-out;
+	-o-transition: all .2s ease-out;
+	transition: all .2s ease-out;
+	
+}
+article section.musicPlayer.header header div.scrubBar:hover{
+
+	height: 10px;
+	
+}
+article section.musicPlayer:hover > header{
+
+	margin-top: -55px;
+}
+
+article section.musicPlayer.header:hover > header{
+
+	margin-top: 0px;
+}
+
+article section.musicPlayer header h1{
+
+	display: inline-block;
+	font-size: .8em;
+	font-weight: 400;
+	color: #343642;
+	margin: 5px;
+}
+article section.musicPlayer header h2{
+	display: inline-block;
+	font-size: .6em;
+	font-weight: lighter;
+	margin: 5px;
+	color: #FF8598;
+}
+
+article section.visualiser{
+	position: fixed;
+	z-index: -9999;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+}
+article section.visualiser canvas{
+	background-blend: multiply;
+}
+article section.visualiser div.bar{
+	position: fixed;
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	left: 50%;
+	top: 50%;
+	margin-left: -100px;
+	margin-top: -100px;
+	background-color: rgba(255,255,255,.4);
+
+
+	-moz-transform: scale(.5);
+	-webkit-transform: scale(.5);
+	-o-transform: scale(.5);
+	-ms-transform: scale(.5);
+	transform: scale(.5);
+
+
+	/*webkit-transition: all .1s ease-out;
+	-moz-transition: all .1s ease-out;
+	-ms-transition: all .1s ease-out;
+	-o-transition: all .1s ease-out;
+	transition: all .1s ease-out;*/
+}
+article section.visualiser div.bar.up{
+
+	-moz-transform: scale(1.5);
+	-webkit-transform: scale(1.5);
+	-o-transform: scale(1.5);
+	-ms-transform: scale(1.5);
+	transform: scale(1.5);
+
+}

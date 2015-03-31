@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='http://fonts.googleapis.com/css?family=Asap:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="css/feather.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
+        <script type="text/javascript" src="js/dancer.min.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript" src="js/mic.js"></script>
+        
+    </head>
+    <body>
+        <header>
+        	<h1 class="hide">Music APP</h1>
+        </header>
+
+        <article>
+            <header><h1 class="hide">Music Player</h1></header>
+            <audio id="myaudio">
+              <!--<source src="audio/Stromae - Tous Les Mêmes.mp3" type="audio/mpeg">-->
+               <source src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1715/the_xx_-_intro.mp3" type="audio/mpeg">
+                <!-- <source src="audio/Stromae - Papaoutai.mp3" type="audio/mpeg">-->
+                
+              Your browser does not support the audio tag.
+            </audio>
+        	<section class="musicPlayer">
+                <span class="icon-expand box"></span>
+        		<div class="banner">
+        		</div>
+
+                <nav>
+                    <ul>
+                        <li class="icon-rewind prev"><span class="hide">prev</span></li>
+                        <li class="icon-play play"><span class="hide">play/pause</span></li>
+                        <li class="icon-fast-forward next"><span class="hide">next</span></li>
+                    </ul>
+                </nav>
+                
+        		<header>
+                    
+                    <div class="scrubBar"><span class="playback"></span></div>
+        			<h1 class="artist">Stromae</h1>
+        			<h2 class="songname">Tous Les Mêmes</h2>
+        		</header>
+        	</section>
+
+
+            <section class="visualiser">
+               <canvas id="canvas"></canvas>
+            </section>
+        </article>
+    </body>
+</html>
