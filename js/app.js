@@ -160,11 +160,12 @@ $(function  () {
 	function waterVis (amount) {
 
 		var xPos = -(maxWidth*2);
+		//
 
 		for (var i = 0; i < amount; i++) {
 
 
-			xPos += (maxWidth*2)/20;
+			xPos += (maxWidth)/10;
 
 			water.push([xPos,0]);
 
@@ -209,6 +210,12 @@ $(function  () {
 	function animate(val){
 
 		ctx.clearRect ( -maxWidth/2 , -maxHeight/2 , canvas.width, canvas.height );
+		
+		//ctx.fillStyle = '#8ED6FF';
+  		//ctx.fill();
+
+
+  		ctx.beginPath();
 
 		for(var j = 0; j<water.length; j++){
 
@@ -226,19 +233,17 @@ $(function  () {
 			ctx.strokeStyle = "#ffffff";
 			ctx.stroke();*/
 
-			ctx.beginPath();
+			
 			var xpos = 0;
 			var ypos = golf;
 			//console.log(xpos);
+
 			if(j != 0){
 				xpos = water[j-1][0];
 				ypos = water[j-1][1];
 			}
 			ctx.moveTo(xpos,ypos);
 			ctx.lineTo(water[j][0],golf);
-			ctx.strokeStyle="red";
-			ctx.stroke();
-
 			/*ctx.beginPath();
 			ctx.fillStyle = "#ffffff";
 			ctx.arc(water[j][0], golf, 10, 0, 2 * Math.PI, false);
@@ -248,6 +253,18 @@ $(function  () {
 			water[j] = [water[j][0],golf];
 
 		}
+		ctx.lineTo(water[water.length-1][0],maxHeight);
+		ctx.lineTo(water[0][0],maxHeight);
+		ctx.lineTo(water[1][0],water[1][1]);
+  		ctx.fillStyle = '#8ED6FF';
+  		ctx.fill();
+		ctx.strokeStyle = "#ffffff";
+		ctx.stroke();
+		ctx.closePath();
+
+
+
+
 
 		/*
 		for (var i = 0; i < points.length; i++) {
