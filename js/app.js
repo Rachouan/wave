@@ -34,6 +34,17 @@ $(function  () {
 	var colors = [["12,100%",61], ['60,100%',81], ['96,63%',78], ['139,34%',61], ['170,100%',32]];
 	
 
+	$(window).on("keyup",function (e) {
+
+		console.log(e.keyCode);
+		switch(e.keyCode){
+
+			case 32:
+			playSong();
+			break;
+		}
+	});
+
 	function init(){
 
 		play.on("click",playSong);
@@ -148,12 +159,12 @@ $(function  () {
 
 	function waterVis (amount) {
 
-		var xPos;
+		var xPos = -(maxWidth*2);
 
 		for (var i = 0; i < amount; i++) {
 
 
-			xPos += -maxWidth/10;
+			xPos += (maxWidth*2)/20;
 
 			water.push([xPos,0]);
 
@@ -204,24 +215,41 @@ $(function  () {
 
 			water[j]
 
-			var golf = Math.sin((val/j))*j;
+			var golf = Math.sin(((val)/j))*j;
 
-			ctx.beginPath();
-			ctx.moveTo(water[j][0],water[j][1]);
+			/*ctx.beginPath();
+			ctx.moveTo(water[j-1][0],water[j-1][1]);
 			if(water[j+1]){
-				ctx.lineTo(water[j+1]/j,water[j+1][1]);
+				ctx.lineTo(water[j]/j,water[j][1]);
 			}
 			ctx.lineWidth = 10;
 			ctx.strokeStyle = "#ffffff";
+			ctx.stroke();*/
+
+			ctx.beginPath();
+			var xpos = 0;
+			var ypos = golf;
+			//console.log(xpos);
+			if(j != 0){
+				xpos = water[j-1][0];
+				ypos = water[j-1][1];
+			}
+			ctx.moveTo(xpos,ypos);
+			ctx.lineTo(water[j][0],golf);
+			ctx.strokeStyle="red";
 			ctx.stroke();
+
+			/*ctx.beginPath();
+			ctx.fillStyle = "#ffffff";
+			ctx.arc(water[j][0], golf, 10, 0, 2 * Math.PI, false);
+			ctx.fill();*/
 
 
 			water[j] = [water[j][0],golf];
 
-
 		}
 
-
+		/*
 		for (var i = 0; i < points.length; i++) {
 			var position = points[i];
 			var newyPos = position[1] - position[4];
@@ -241,6 +269,7 @@ $(function  () {
 			points[i] = [position[0],newyPos,position[2],position[3],position[4]];
 
 		};
+		*/
 
 	}
 
