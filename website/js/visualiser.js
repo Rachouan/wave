@@ -4,6 +4,7 @@ function Visualiser () {
 	var water = [];
 	var maxWidth;
 	var maxHeight;
+	var canvas;
 	var ctx;
 	var context;
 	if('webkitAudioContext' in window) {
@@ -28,10 +29,12 @@ function Visualiser () {
 	}
 
 	Visualiser.prototype.setUpCanvas = function(canvas) {
+
+		this.canvas = canvas;
 		ctx = canvas.getContext('2d');
 		maxWidth = canvas.width;
 		maxHeight = canvas.height;
-		ctx.translate (canvas.width/2, canvas.height/2);
+		ctx.translate (0, 0);
 		console.log(maxWidth,maxHeight);
 	};
 
@@ -60,6 +63,8 @@ function Visualiser () {
 			var size = randRange(5,50);
 			var color = randRange(0,colors.length-1);
 			var param = Math.random(2);
+
+			console.log(x,y);
 			points.push([x,y,size,color,param]);
 
 		}
@@ -151,7 +156,6 @@ function Visualiser () {
 		for (var i = 0; i < points.length; i++) {
 			var position = points[i];
 			var newyPos = position[1] - position[4];
-			//console.log(position);
 
 			if(newyPos < -maxHeight){
 				newyPos = randRange(maxHeight, maxHeight+200);
